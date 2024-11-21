@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         userInput = findViewById(R.id.userInput);
 
         // Asociar un objeto OnClickListener al botón, que es el objeto que reacciona al click
-        View.OnClickListener listener = new View.OnClickListener() {
+        sendInputButton.setOnClickListener(new View.OnClickListener() {
             @Override // Hace falta sobrescribir el metodo onClick de esta interfaz indicándole qué debe hacer
             public void onClick(View v) {
                 // Añadimos el mensaje de tipo Toast
-                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Hola Mundo", Toast.LENGTH_SHORT).show();
             }
-        };
+        });
     }
 }
