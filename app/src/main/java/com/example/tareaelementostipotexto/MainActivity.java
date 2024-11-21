@@ -43,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
             @Override // Hace falta sobrescribir el metodo onClick de esta interfaz indicándole qué debe hacer
             public void onClick(View v) {
                 // Añadimos el mensaje de tipo Toast
-                String inputMessage= userInput.getText().toString();
-                Toast.makeText(MainActivity.this, inputMessage, Toast.LENGTH_SHORT).show();
+                String inputMessage= userInput.getText().toString().trim();
+                if (inputMessage.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Introduce texto en el cuadro para mostrarlo", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, inputMessage, Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
