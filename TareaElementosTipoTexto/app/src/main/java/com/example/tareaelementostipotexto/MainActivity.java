@@ -1,4 +1,3 @@
-
 // 1.Diseñar una aplicación con una caja de texto y un botón, cuando se pulsa el botón aparece el
 // texto tecleado en la caja en un mensaje de tipo Toast.
 
@@ -16,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
 
