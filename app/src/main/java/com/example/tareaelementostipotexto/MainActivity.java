@@ -35,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Se enlazan las variables con los elementos de la interfaz
-        sendInputButton = findViewById(R.id.sendInputButton);
         userInput = findViewById(R.id.userInput);
+        sendInputButton = findViewById(R.id.sendInputButton);
 
+        // Forma programática:
         // Asociar un objeto OnClickListener al botón, que es el objeto que reacciona al click
-        sendInputButton.setOnClickListener(new View.OnClickListener() {
+        /* sendInputButton.setOnClickListener(new View.OnClickListener() {
             @Override // Hace falta sobrescribir el metodo onClick de esta interfaz indicándole qué debe hacer
             public void onClick(View v) {
                 // Añadimos el mensaje de tipo Toast
@@ -49,8 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, inputMessage, Toast.LENGTH_SHORT).show();
                 }
-
             }
-        });
+        });*/
+
+    }
+
+    // Metodo alternativo del profesor:
+    // Se crea un metodo y se asocia este metodo en el archivo xml con el atributo "OnClick"
+    public void showText(View v) {
+        String inputMessage= userInput.getText().toString().trim();
+        if (inputMessage.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Introduce texto en el cuadro para mostrarlo", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, inputMessage, Toast.LENGTH_SHORT).show();
+        }
+        // Además, hace falta añadir en el activity_main.xml la línea:
+        // android:onClick="showText"
+        // Esto se puede añadir manualmente en la etiqueta <Button> correspondiente
+        // o automáticamente a través del modo diseño, en el atributo "onClick" del botón.
     }
 }

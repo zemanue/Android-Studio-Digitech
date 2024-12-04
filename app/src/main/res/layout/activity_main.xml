@@ -11,6 +11,7 @@
         android:id="@+id/sendInputButton"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:onClick="showText"
         android:text="Mostrar texto"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
