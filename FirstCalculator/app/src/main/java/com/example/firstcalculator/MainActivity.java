@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         editTextNum1 = findViewById(R.id.editTextNum1);
-        editTextNum2 = findViewById(R.id.editTextNum2;
+        editTextNum2 = findViewById(R.id.editTextNum2);
 
         radioButtonSum = findViewById(R.id.radioButtonSum);
         radioButtonSubst = findViewById(R.id.radioButtonSubst);
@@ -44,16 +45,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(View v){
+        double num1 = Double.parseDouble(editTextNum1.getText().toString());
+        double num2 = Double.parseDouble(editTextNum2.getText().toString());
+        double result = 0.0;
         if (radioButtonSum.isChecked()) {
-
+            result = num1 + num2;
         } else if (radioButtonSubst.isChecked()) {
-
-        } else if (radioButtonSubst.isChecked()) {
-
-        } else if (radioButtonSubst.isChecked()) {
-
+            result = num1 - num2;
+        } else if (radioButtonMult.isChecked()) {
+            result = num1 * num2;
+        } else if (radioButtonDiv.isChecked()) {
+            result = num1 / num2;
         } else {
-
+            Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
         }
+
+        textViewResult.setText("El resultado es: " + result);
     }
 }
