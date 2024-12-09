@@ -1,6 +1,7 @@
 package com.example.firstcalculator;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewResult;
     private EditText editTextNum1, editTextNum2;
     private RadioButton radioButtonSum, radioButtonSubst, radioButtonMult, radioButtonDiv;
+    private Button buttonCalculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +32,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
         editTextNum1 = findViewById(R.id.editTextNum1);
-        editTextNum2 = findViewById(R.id.editTextNum2);
+        editTextNum2 = findViewById(R.id.editTextNum2;
+
         radioButtonSum = findViewById(R.id.radioButtonSum);
         radioButtonSubst = findViewById(R.id.radioButtonSubst);
         radioButtonMult = findViewById(R.id.radioButtonMult);
         radioButtonDiv = findViewById(R.id.radioButtonDiv);
+
+        buttonCalculate = findViewById(R.id.buttonCalculate);
         textViewResult = findViewById(R.id.textViewResult);
+    }
+
+    public void calculate(View v){
+        if (radioButtonSum.isChecked()) {
+
+        } else if (radioButtonSubst.isChecked()) {
+
+        } else if (radioButtonSubst.isChecked()) {
+
+        } else if (radioButtonSubst.isChecked()) {
+
+        } else {
+
+        }
     }
 }
