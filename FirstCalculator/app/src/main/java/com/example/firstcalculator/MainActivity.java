@@ -55,7 +55,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (radioButtonMult.isChecked()) {
             result = num1 * num2;
         } else if (radioButtonDiv.isChecked()) {
-            result = num1 / num2;
+            if(num2 == 0) {
+                Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
+            } else {
+                result = num1 / num2;
+            }
         } else {
             Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
         }
