@@ -45,25 +45,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(View v){
-        double num1 = Double.parseDouble(editTextNum1.getText().toString());
-        double num2 = Double.parseDouble(editTextNum2.getText().toString());
-        double result = 0.0;
-        if (radioButtonSum.isChecked()) {
-            result = num1 + num2;
-        } else if (radioButtonSubst.isChecked()) {
-            result = num1 - num2;
-        } else if (radioButtonMult.isChecked()) {
-            result = num1 * num2;
-        } else if (radioButtonDiv.isChecked()) {
-            if(num2 == 0) {
-                Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
-            } else {
-                result = num1 / num2;
-            }
+        String text1 = editTextNum1.getText().toString().trim();
+        String text2 = editTextNum2.getText().toString().trim();
+        if(text1.isEmpty() || text2.isEmpty()) {
+            Toast.makeText(this, "Introduce dos números antes de intentar calcular", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
-        }
+            double num1 = Double.parseDouble(text1);
+            double num2 = Double.parseDouble(text2);
+            double result = 0.0;
+            if (radioButtonSum.isChecked()) {
+                result = num1 + num2;
+            } else if (radioButtonSubst.isChecked()) {
+                result = num1 - num2;
+            } else if (radioButtonMult.isChecked()) {
+                result = num1 * num2;
+            } else if (radioButtonDiv.isChecked()) {
+                if(num2 == 0) {
+                    Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
+                } else {
+                    result = num1 / num2;
+                }
+            } else {
+                Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
+            }
 
-        textViewResult.setText("El resultado es: " + result);
+            textViewResult.setText("El resultado es: " + String.valueOf(result));
+        }
     }
 }
