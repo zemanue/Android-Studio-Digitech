@@ -3,8 +3,8 @@ package com.example.calculatorcheckbox;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,9 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewResult;
+    private TextView textViewResultSum, textViewResultSubst, textViewResultMult, textViewResultDiv;
     private EditText editTextNum1, editTextNum2;
-    private RadioButton radioButtonSum, radioButtonSubst, radioButtonMult, radioButtonDiv;
+    private CheckBox checkBoxSum, checkBoxSubst, checkBoxMult, checkBoxDiv;
     private Button buttonCalculate;
 
     @Override
@@ -35,8 +35,17 @@ public class MainActivity extends AppCompatActivity {
         editTextNum1 = findViewById(R.id.editTextNum1);
         editTextNum2 = findViewById(R.id.editTextNum2);
 
+        checkBoxSum = findViewById(R.id.checkBoxSum);
+        checkBoxSubst = findViewById(R.id.checkBoxSubst);
+        checkBoxMult = findViewById(R.id.checkBoxMult);
+        checkBoxDiv = findViewById(R.id.checkBoxDiv);
+
         buttonCalculate = findViewById(R.id.buttonCalculate);
-        textViewResult = findViewById(R.id.textViewResultSum);
+
+        textViewResultSum = findViewById(R.id.textViewResultSum);
+        textViewResultSubst = findViewById(R.id.textViewResultSubst);
+        textViewResultMult = findViewById(R.id.textViewResultMult);
+        textViewResultDiv = findViewById(R.id.textViewResultDiv);
     }
 
     public void calculate(View v){
@@ -47,24 +56,46 @@ public class MainActivity extends AppCompatActivity {
         } else {
             double num1 = Double.parseDouble(text1);
             double num2 = Double.parseDouble(text2);
-            double result = 0.0;
-            if (radioButtonSum.isChecked()) {
-                result = num1 + num2;
-            } else if (radioButtonSubst.isChecked()) {
-                result = num1 - num2;
-            } else if (radioButtonMult.isChecked()) {
-                result = num1 * num2;
-            } else if (radioButtonDiv.isChecked()) {
-                if(num2 == 0) {
-                    Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
-                } else {
-                    result = num1 / num2;
-                }
-            } else {
+
+            double resultSum = 0.0;
+            double resultSubst = 0.0;
+            double resultMult = 0.0;
+            double resultDiv = 0.0;
+
+            String textResultSum = "";
+            String textResultSubst = "";
+            String textResultMult = "";
+            String textResultDiv = "";
+
+            if (!checkBoxSum.isChecked()
+                    && !checkBoxSubst.isChecked() 
+                    && !checkBoxMult.isChecked()
+                    && !checkBoxDiv.isChecked()) {
                 Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
+            } else {
+                if (checkBoxSum.isChecked()) {
+                    resultSum = num1 + num2;
+                    textResultSum = "El resultado de la suma es: " + resultSum;
+                } if (checkBoxSubst.isChecked()) {
+                    resultSubst = num1 - num2;
+                    textResultSubst = "El resultado de la resta es: " + resultSubst;
+                } if (checkBoxMult.isChecked()) {
+                    resultMult = num1 * num2;
+                    textResultMult = "El resultado de la mutiplicación es: " + resultMult;
+                } if (checkBoxDiv.isChecked()) {
+                    if(num2 == 0) {
+                        Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
+                    } else {
+                        resultDiv = num1 / num2;
+                        textResultDiv = "El resultado de la división es: " + resultDiv;
+                    }
+                }
             }
 
-            textViewResult.setText("El resultado es: " + String.valueOf(result));
+            textViewResultSum.setText(textResultSum);
+            textViewResultSubst.setText(textResultSubst);
+            textViewResultMult.setText(textResultMult);
+            textViewResultDiv.setText(textResultDiv);
         }
     }
 }
