@@ -12,6 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:autofillHints="Segundo número"
         android:ems="10"
         android:hint="Segundo Número"
         android:inputType="numberDecimal"
@@ -38,8 +39,9 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:autofillHints="Primer número"
         android:ems="10"
-        android:hint="Primer número"
+        android:hint="Primer Número"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.414"
@@ -58,19 +60,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066" />
-
-    <TextView
-        android:id="@+id/textViewResultSum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate"
-        app:layout_constraintVertical_bias="0.418" />
 
     <TextView
         android:id="@+id/textViewSelectOp"
@@ -129,5 +118,49 @@
         android:text="Dividir"
         app:layout_constraintStart_toStartOf="@+id/checkBoxNum"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxMult" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/buttonCalculate"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate">
+
+        <TextView
+            android:id="@+id/textViewResultSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text=""
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewResultSubst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text=""
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewResultMult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text=""
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewResultDiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text=""
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
