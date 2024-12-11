@@ -7,32 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextNum2"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints="Segundo número"
-        android:ems="10"
-        android:hint="Segundo Número"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNum2" />
-
     <TextView
-        android:id="@+id/textViewNum2"
+        android:id="@+id/textViewNum1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Introduce un segundo número:"
+        android:text="Introduce un número: "
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNum1"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
 
     <EditText
         android:id="@+id/editTextNum1"
@@ -49,17 +35,31 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNum1" />
 
     <TextView
-        android:id="@+id/textViewNum1"
+        android:id="@+id/textViewNum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Introduce un número: "
+        android:text="Introduce un segundo número:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNum1"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <EditText
+        android:id="@+id/editTextNum2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Segundo número"
+        android:ems="10"
+        android:hint="Segundo Número"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNum2" />
 
     <TextView
         android:id="@+id/textViewSelectOp"
@@ -74,18 +74,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextNum2"
         app:layout_constraintVertical_bias="0.088" />
 
-    <Button
-        android:id="@+id/buttonCalculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="calculate"
-        android:text="Calcular"
-        app:layout_constraintStart_toStartOf="@+id/textViewSelectOp"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxDiv" />
-
     <CheckBox
-        android:id="@+id/checkBoxNum"
+        android:id="@+id/checkBoxSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -99,15 +89,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Restar"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxNum"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxNum" />
+        app:layout_constraintStart_toStartOf="@+id/checkBoxSum"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSum" />
 
     <CheckBox
         android:id="@+id/checkBoxMult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Multiplicar"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxNum"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxSum"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxSubst" />
 
     <CheckBox
@@ -116,8 +106,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:text="Dividir"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxNum"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxSum"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxMult" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="calculate"
+        android:text="Calcular"
+        app:layout_constraintStart_toStartOf="@+id/textViewSelectOp"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxDiv" />
 
     <LinearLayout
         android:layout_width="300dp"
