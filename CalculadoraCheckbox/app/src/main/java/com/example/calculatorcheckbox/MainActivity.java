@@ -2,7 +2,6 @@ package com.example.calculatorcheckbox;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewResultSum, textViewResultSubst, textViewResultMult, textViewResultDiv;
     private EditText editTextNum1, editTextNum2;
     private CheckBox checkBoxSum, checkBoxSubst, checkBoxMult, checkBoxDiv;
-    private Button buttonCalculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         checkBoxMult = findViewById(R.id.checkBoxMult);
         checkBoxDiv = findViewById(R.id.checkBoxDiv);
 
-        buttonCalculate = findViewById(R.id.buttonCalculate);
-
         textViewResultSum = findViewById(R.id.textViewResultSum);
         textViewResultSubst = findViewById(R.id.textViewResultSubst);
         textViewResultMult = findViewById(R.id.textViewResultMult);
@@ -57,37 +53,28 @@ public class MainActivity extends AppCompatActivity {
             double num1 = Double.parseDouble(text1);
             double num2 = Double.parseDouble(text2);
 
-            double resultSum = 0.0;
-            double resultSubst = 0.0;
-            double resultMult = 0.0;
-            double resultDiv = 0.0;
-
             String textResultSum = "";
             String textResultSubst = "";
             String textResultMult = "";
             String textResultDiv = "";
 
             if (!checkBoxSum.isChecked()
-                    && !checkBoxSubst.isChecked() 
+                    && !checkBoxSubst.isChecked()
                     && !checkBoxMult.isChecked()
                     && !checkBoxDiv.isChecked()) {
                 Toast.makeText(this, "Elige una operación para calcular", Toast.LENGTH_SHORT).show();
             } else {
                 if (checkBoxSum.isChecked()) {
-                    resultSum = num1 + num2;
-                    textResultSum = "El resultado de la suma es: " + resultSum;
+                    textResultSum = "El resultado de la suma es: " + (num1 + num2);
                 } if (checkBoxSubst.isChecked()) {
-                    resultSubst = num1 - num2;
-                    textResultSubst = "El resultado de la resta es: " + resultSubst;
+                    textResultSubst = "El resultado de la resta es: " + (num1 - num2);
                 } if (checkBoxMult.isChecked()) {
-                    resultMult = num1 * num2;
-                    textResultMult = "El resultado de la mutiplicación es: " + resultMult;
+                    textResultMult = "El resultado de la mutiplicación es: " + (num1 * num2);
                 } if (checkBoxDiv.isChecked()) {
                     if(num2 == 0) {
                         Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_SHORT).show();
                     } else {
-                        resultDiv = num1 / num2;
-                        textResultDiv = "El resultado de la división es: " + resultDiv;
+                        textResultDiv = "El resultado de la división es: " + (num1 / num2);
                     }
                 }
             }
