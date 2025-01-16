@@ -33,32 +33,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void throwDices(View v) {
+        changeDiceImage(imageFirstDice);
+        changeDiceImage(imageSecondDice);
+    }
+
+    public void changeDiceImage(ImageView diceImage) {
         Random random1to6 = new Random();
-        int resultDice1 = random1to6.nextInt(6) + 1;
-        switch (resultDice1) {
+        int diceResult = random1to6.nextInt(6) + 1;
+        switch (diceResult) {
             case 1:
-                imageFirstDice.setImageResource(R.drawable.dice_1);
+                diceImage.setImageResource(R.drawable.dice_1);
                 break;
             case 2:
-                imageFirstDice.setImageResource(R.drawable.dice_2);
+                diceImage.setImageResource(R.drawable.dice_2);
                 break;
             case 3:
-                imageFirstDice.setImageResource(R.drawable.dice_3);
+                diceImage.setImageResource(R.drawable.dice_3);
                 break;
             case 4:
-                imageFirstDice.setImageResource(R.drawable.dice_4);
+                diceImage.setImageResource(R.drawable.dice_4);
                 break;
             case 5:
-                imageFirstDice.setImageResource(R.drawable.dice_5);
+                diceImage.setImageResource(R.drawable.dice_5);
                 break;
             case 6:
-                imageFirstDice.setImageResource(R.drawable.dice_6);
+                diceImage.setImageResource(R.drawable.dice_6);
                 break;
             default:
-                imageFirstDice.setImageResource(R.drawable.ic_launcher_foreground);
+                diceImage.setImageResource(R.drawable.ic_launcher_foreground);
                 break;
         }
-
     }
 
 }
