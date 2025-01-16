@@ -2,7 +2,6 @@ package com.example.tareadadosimagebutton;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,8 +14,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton imageButtonDiceCup;
-    ImageView imageFirstDice, imageSecondDice;
+    ImageView imageFirstDice;
+    ImageView imageSecondDice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +28,36 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        imageButtonDiceCup = findViewById(R.id.imageButtonDiceCup);
-        imageFirstDice = findViewById(R.id.imageFirstDice);
-        imageSecondDice = findViewById(R.id.imageSecondDice);
+        imageFirstDice = findViewById(R.id.imageSecondDice);
+        imageSecondDice = findViewById(R.id.imageFirstDice);
     }
 
     public void throwDices(View v) {
+        Random random1to6 = new Random();
+        int resultDice1 = random1to6.nextInt(6) + 1;
+        switch (resultDice1) {
+            case 1:
+                imageFirstDice.setImageResource(R.drawable.dice_1);
+                break;
+            case 2:
+                imageFirstDice.setImageResource(R.drawable.dice_2);
+                break;
+            case 3:
+                imageFirstDice.setImageResource(R.drawable.dice_3);
+                break;
+            case 4:
+                imageFirstDice.setImageResource(R.drawable.dice_4);
+                break;
+            case 5:
+                imageFirstDice.setImageResource(R.drawable.dice_5);
+                break;
+            case 6:
+                imageFirstDice.setImageResource(R.drawable.dice_6);
+                break;
+            default:
+                imageFirstDice.setImageResource(R.drawable.ic_launcher_foreground);
+                break;
+        }
 
     }
 

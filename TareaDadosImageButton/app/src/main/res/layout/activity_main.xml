@@ -37,9 +37,10 @@
         app:srcCompat="@drawable/cubilete" />
 
     <ImageView
-        android:id="@+id/imageFirstDice"
+        android:id="@+id/imageSecondDice"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:contentDescription="Segundo Dado"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,9 +51,10 @@
         app:srcCompat="@drawable/dice_1" />
 
     <ImageView
-        android:id="@+id/imageSecondDice"
+        android:id="@+id/imageFirstDice"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:contentDescription="Primer Dado"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
