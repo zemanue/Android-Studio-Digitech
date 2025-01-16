@@ -3,6 +3,7 @@ package com.example.tareadadosimagebutton;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void throwDices(View v) {
-        changeDiceImage(imageFirstDice);
-        changeDiceImage(imageSecondDice);
+        int valueFirstDice = changeDiceImage(imageFirstDice);
+        int valueSecondDice = changeDiceImage(imageSecondDice);
+        if (valueFirstDice == valueSecondDice) {
+            Toast.makeText(this, "¡Dados dobles!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void changeDiceImage(ImageView diceImage) {
+    public int changeDiceImage(ImageView diceImage) {
         Random random1to6 = new Random();
         int diceResult = random1to6.nextInt(6) + 1;
         switch (diceResult) {
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 diceImage.setImageResource(R.drawable.ic_launcher_foreground);
                 break;
         }
+        return diceResult;
     }
 
 }
