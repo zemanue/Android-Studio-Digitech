@@ -1,5 +1,6 @@
 package com.example.tareadadosimagebutton;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void throwDices(View v) {
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.dice_sound);
+        mp.start();
         int valueFirstDice = changeDiceImage(imageFirstDice);
         int valueSecondDice = changeDiceImage(imageSecondDice);
         if (valueFirstDice == valueSecondDice) {
