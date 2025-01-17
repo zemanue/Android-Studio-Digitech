@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,8 +17,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageFirstDice;
-    ImageView imageSecondDice;
+    ImageView imageFirstDice, imageSecondDice;
+    TextView textViewResult;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        imageFirstDice = findViewById(R.id.imageSecondDice);
-        imageSecondDice = findViewById(R.id.imageFirstDice);
+        imageFirstDice = findViewById(R.id.imageFirstDice);
+        imageSecondDice = findViewById(R.id.imageSecondDice);
+        textViewResult = findViewById(R.id.textViewResult);
     }
 
     public void throwDices(View v) {
@@ -39,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         mp.start();
         int valueFirstDice = changeDiceImage(imageFirstDice);
         int valueSecondDice = changeDiceImage(imageSecondDice);
+        int totalValue = valueFirstDice + valueSecondDice;
         if (valueFirstDice == valueSecondDice) {
             Toast.makeText(this, "¡Dados dobles!", Toast.LENGTH_SHORT).show();
         }
+        textViewResult.setText(valueFirstDice + " + " + valueSecondDice + " = " + totalValue);
     }
 
     public int changeDiceImage(ImageView diceImage) {
