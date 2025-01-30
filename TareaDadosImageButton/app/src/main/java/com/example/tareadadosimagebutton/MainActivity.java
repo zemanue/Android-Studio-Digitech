@@ -19,6 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageFirstDice, imageSecondDice;
     TextView textViewResult;
+    // Un array de enteros que contiene las imágenes de los dados (R.drawable.dice_x devuelve un entero)
+    int[] diceImages = {
+            R.drawable.ic_launcher_foreground, // Imagen por defecto para que ocupe el índice 0
+            R.drawable.dice_1,
+            R.drawable.dice_2,
+            R.drawable.dice_3,
+            R.drawable.dice_4,
+            R.drawable.dice_5,
+            R.drawable.dice_6
+    };
 
 
     @Override
@@ -38,43 +48,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void throwDices(View v) {
+        // Reproduce un sonido de lanzar dados
         MediaPlayer mp = MediaPlayer.create(this, R.raw.dice_sound);
         mp.start();
+
+        // Cambiar la imagen de los dados, guardando el resultado obtenido
         int valueFirstDice = changeDiceImage(imageFirstDice);
         int valueSecondDice = changeDiceImage(imageSecondDice);
-        int totalValue = valueFirstDice + valueSecondDice;
+
+        // Si los dados han salido iguales, avisa con un Toast
         if (valueFirstDice == valueSecondDice) {
             Toast.makeText(this, "¡Dados dobles!", Toast.LENGTH_SHORT).show();
         }
+
+        // Mostrar el resultado de la suma de los dados
+        int totalValue = valueFirstDice + valueSecondDice;
         textViewResult.setText(valueFirstDice + " + " + valueSecondDice + " = " + totalValue);
     }
 
     public int changeDiceImage(ImageView diceImage) {
         Random random1to6 = new Random();
-        int diceResult = random1to6.nextInt(6) + 1;
-        switch (diceResult) {
-            case 1:
-                diceImage.setImageResource(R.drawable.dice_1);
-                break;
-            case 2:
-                diceImage.setImageResource(R.drawable.dice_2);
-                break;
-            case 3:
-                diceImage.setImageResource(R.drawable.dice_3);
-                break;
-            case 4:
-                diceImage.setImageResource(R.drawable.dice_4);
-                break;
-            case 5:
-                diceImage.setImageResource(R.drawable.dice_5);
-                break;
-            case 6:
-                diceImage.setImageResource(R.drawable.dice_6);
-                break;
-            default:
-                diceImage.setImageResource(R.drawable.ic_launcher_foreground);
-                break;
-        }
+        int diceResult = random1to6.nextInt(6) + 1; // Obtenemos un entero aleatorio entre 1 y 6
+
+        // Se elige la imagen del array diceImages correspondiente al valor obtenido
+        diceImage.setImageResource(diceImages[diceResult]);
+
+        // Al devolver un entero, podemos guardar el resultado del dado en una variable
         return diceResult;
     }
 
