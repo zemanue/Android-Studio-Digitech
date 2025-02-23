@@ -1,5 +1,6 @@
 package com.example.calculadoraactivities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -47,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void calculate(View v) {
+    public void showDataActivity(View v) {
+        calculate();
+        // Creamos el objeto Intent e iniciamos la actividad
+        Intent intent = new Intent(this, PasarDatosActivity.class);
+        startActivity(intent);
+    }
+
+    public void calculate() {
 
         // Creamos la variable con los datos del spinner
         String selectedOperation = spinnerSelectOp.getSelectedItem().toString().toLowerCase();

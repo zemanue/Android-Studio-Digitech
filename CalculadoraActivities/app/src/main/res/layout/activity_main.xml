@@ -8,6 +8,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#6750A3"
+        android:gravity="center"
+        android:text="PasarDatosActivity"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textViewNum1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.159" />
 
     <EditText
         android:id="@+id/editTextNum1"
@@ -83,15 +97,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewSelectOp" />
 
     <Button
-        android:id="@+id/buttonCalculate"
+        android:id="@+id/buttonShowData"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="88dp"
-        android:onClick="calculate"
-        android:text="Calcular"
+        android:layout_marginTop="48dp"
+        android:onClick="showDataActivity"
+        android:text="Mostrar datos"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/textViewSelectOp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerSelectOp" />
 
     <TextView
@@ -101,7 +115,7 @@
         android:layout_marginTop="80dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textViewSelectOp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonShowData" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
