@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDataActivity(View v) {
-        // Comprobamos la operacion seleccionada
+        // Comprobamos que los Edit Text no estén vacíos
         String text1 = editTextNum1.getText().toString().trim();
         String text2 = editTextNum2.getText().toString().trim();
         if(text1.isEmpty() || text2.isEmpty()) {
@@ -57,21 +57,35 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Obtenemos la operación seleccionada del Spinner
+        String selectedOperation = spinnerSelectOp.getSelectedItem().toString().toLowerCase();
+
         // Parseamos el texto a double y calculamos el resultado
         double num1 = Double.parseDouble(text1);
         double num2 = Double.parseDouble(text2);
-        double result = calculate(num1, num2);
+        double result = calculate(num1, num2, selectedOperation);
 
-        // Creamos el Intent e iniciamos la actividad
+        // Convertimos el nombre de la operación en su símbolo correspondiente
+        if (selectedOperation.equals("sumar")) {
+            selectedOperation = "+";
+        } else if (selectedOperation.equals("restar")) {
+            selectedOperation = "-";
+        } else if (selectedOperation.equals("multiplicar")) {
+            selectedOperation = "*";
+        } else if (selectedOperation.equals("dividir")) {
+            selectedOperation = "/";
+        }
+
+        // Creamos el Intent, pasamos los datos y lanzamos la actividad
         Intent intent = new Intent(this, PasarDatosActivity.class);
+        intent.putExtra("num1", num1);
+        intent.putExtra("num2", num2);
+        intent.putExtra("selectedOperation", selectedOperation);
         intent.putExtra("result", result);
         startActivity(intent);
     }
 
-    public double calculate(double num1, double num2) {
-
-        // Creamos la variable con los datos del spinner
-        String selectedOperation = spinnerSelectOp.getSelectedItem().toString().toLowerCase();
+    public double calculate(double num1, double num2, String selectedOperation) {
 
         switch (selectedOperation) {
             case "sumar":

@@ -7,4 +7,76 @@
     android:layout_height="match_parent"
     tools:context=".PasarDatosActivity">
 
+    <TextView
+        android:id="@+id/textViewPasarDatosActivity"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#6750A3"
+        android:gravity="center"
+        android:text="PasarDatosActivity"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2ActivityNum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPasarDatosActivity" />
+
+    <TextView
+        android:id="@+id/textView2ActivityOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2ActivityNum1" />
+
+    <TextView
+        android:id="@+id/textView2ActivityNum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2ActivityOperation" />
+
+    <TextView
+        android:id="@+id/textView2ActivityResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/btn_default"
+        android:backgroundTint="#6750A3"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2ActivityNum2" />
+
+    <Button
+        android:id="@+id/buttonReturnMainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:onClick="returnMainActivity"
+        android:text="Volver"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2ActivityResult" />
 </androidx.constraintlayout.widget.ConstraintLayout>

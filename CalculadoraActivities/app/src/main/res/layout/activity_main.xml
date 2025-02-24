@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewActivity"
+        android:id="@+id/textViewMainActivity"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#6750A3"
         android:gravity="center"
-        android:text="PasarDatosActivity"
+        android:text="MainActivity"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -31,8 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMainActivity"
+        app:layout_constraintVertical_bias="0.08" />
 
     <EditText
         android:id="@+id/editTextNum1"
