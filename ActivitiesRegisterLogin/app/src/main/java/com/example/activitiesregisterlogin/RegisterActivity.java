@@ -27,8 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
-        editTextId = findViewById(R.id.editTextId);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextId = findViewById(R.id.editTextIdLogin);
+        editTextPassword = findViewById(R.id.editTextPasswordLogin);
 
     }
 
@@ -41,6 +41,8 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, LoginActivity.class);
+            intent.putExtra("id", id);
+            intent.putExtra("password", password);
             startActivity(intent);
         }
     }
