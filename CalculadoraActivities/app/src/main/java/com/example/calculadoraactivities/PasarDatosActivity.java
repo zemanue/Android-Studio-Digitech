@@ -1,6 +1,7 @@
 package com.example.calculadoraactivities;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,12 @@ public class PasarDatosActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        double result = getIntent().getDoubleExtra("result", 0);
+        Toast.makeText(this, "El resultado es: " + result, Toast.LENGTH_SHORT).show();
+
+        // Volver a la MainActivity
+        finish();
+
     }
 }

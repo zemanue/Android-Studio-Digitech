@@ -49,18 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDataActivity(View v) {
-        calculate();
-        // Creamos el objeto Intent e iniciamos la actividad
-        Intent intent = new Intent(this, PasarDatosActivity.class);
-        startActivity(intent);
-    }
-
-    public void calculate() {
-
-        // Creamos la variable con los datos del spinner
-        String selectedOperation = spinnerSelectOp.getSelectedItem().toString().toLowerCase();
-
-        // Comprobamos la operación seleccionada
+        // Comprobamos la operacion seleccionada
         String text1 = editTextNum1.getText().toString().trim();
         String text2 = editTextNum2.getText().toString().trim();
         if(text1.isEmpty() || text2.isEmpty()) {
@@ -68,25 +57,38 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Parseamos el texto a double y calculamos el resultado
         double num1 = Double.parseDouble(text1);
         double num2 = Double.parseDouble(text2);
+        double result = calculate(num1, num2);
+
+        // Creamos el Intent e iniciamos la actividad
+        Intent intent = new Intent(this, PasarDatosActivity.class);
+        intent.putExtra("result", result);
+        startActivity(intent);
+    }
+
+    public double calculate(double num1, double num2) {
+
+        // Creamos la variable con los datos del spinner
+        String selectedOperation = spinnerSelectOp.getSelectedItem().toString().toLowerCase();
 
         switch (selectedOperation) {
             case "sumar":
-                textViewResultOp.setText("Suma: " + num1 + " + " + num2 + " = " + (num1 + num2));
-                break;
+                return num1 + num2;
+//                textViewResultOp.setText("Suma: " + num1 + " + " + num2 + " = " + (num1 + num2));
             case "restar":
-                textViewResultOp.setText("Resta: " + num1 + " - " + num2 + " = " + (num1 - num2));
-                break;
+                return num1 - num2;
+//                textViewResultOp.setText("Resta: " + num1 + " - " + num2 + " = " + (num1 - num2));
             case "multiplicar":
-                textViewResultOp.setText("Multiplicación: " + num1 + " * " + num2 + " = " + (num1 * num2));
-                break;
+                return num1 * num2;
+//                textViewResultOp.setText("Multiplicación: " + num1 + " * " + num2 + " = " + (num1 * num2));
             case "dividir":
-                textViewResultOp.setText("División: " + + num1 + " / " + num2 + " = " + (num1 / num2));
-                break;
+                return num1 / num2;
+//                textViewResultOp.setText("División: " + + num1 + " / " + num2 + " = " + (num1 / num2));
             default:
-                textViewResultOp.setText("Error");
-                break;
+                return 0;
+//                textViewResultOp.setText("Error");
         }
     }
 }
