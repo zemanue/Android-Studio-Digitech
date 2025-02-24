@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ActivitiesRegisterLogin"
         tools:targetApi="31">
         <activity
+            android:name=".IndexActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
