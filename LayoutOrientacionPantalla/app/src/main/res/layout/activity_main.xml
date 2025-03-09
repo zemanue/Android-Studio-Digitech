@@ -48,18 +48,21 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="landscapeScreenOrientation"
                 android:text="Horizontal" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="portraitScreenOrientation"
                 android:text="Vertical" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="automaticScreenOrientation"
                 android:text="Automático" />
         </LinearLayout>
     </LinearLayout>
