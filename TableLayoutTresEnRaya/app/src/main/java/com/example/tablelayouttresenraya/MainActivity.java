@@ -3,6 +3,8 @@ package com.example.tablelayouttresenraya;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,4 +42,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void restart(View v){
+        jugador = "X";
+        // Recorrer todos los botones del tablero y establecer "-" en su texto
+        TableLayout tableLayout = findViewById(R.id.tableLayout);
+        for (int i = 0; i < 3; i++) { // Primer bucle: recorre las filas de la tabla (TableLayout)
+            TableRow row = (TableRow) tableLayout.getChildAt(i);
+            for (int j = 0; j < 3; j++) { // Segundo bucle: recorre cada elemento de la fila (TableRow)
+                Button button = (Button) row.getChildAt(j);
+                button.setText("-");
+            }
+        }
+    }
 }
