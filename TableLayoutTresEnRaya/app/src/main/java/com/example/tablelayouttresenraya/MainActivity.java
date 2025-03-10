@@ -1,6 +1,8 @@
 package com.example.tablelayouttresenraya;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String jugador = "X";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +25,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    public void rellenarCasilla(View v) {
+        Button button = (Button) v;
+        button.setText(jugador);
+        cambiarJugador();
+    }
+
+    public void cambiarJugador(){
+        if (jugador.equals("X")){
+            jugador = "O";
+        } else {
+            jugador = "X";
+        }
+    }
+
 }
