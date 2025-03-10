@@ -30,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void rellenarCasilla(View v) {
         Button button = (Button) v;
-        button.setText(jugador);
-        cambiarJugador();
+        if (button.getText().toString().equals("-")) {
+            button.setText(jugador);
+            cambiarJugador();
+        } else {
+            return;
+        }
     }
 
     public void cambiarJugador(){
