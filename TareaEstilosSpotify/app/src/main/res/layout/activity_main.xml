@@ -7,13 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV96"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutSearch"
-        android:layout_width="375dp"
-        android:layout_height="145dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH20"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV96"
+        app:layout_constraintStart_toEndOf="@id/guidelineV4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textViewSearch"
@@ -27,12 +43,12 @@
 
         <EditText
             android:id="@+id/editTextSearch"
-            android:layout_width="340dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
-            android:drawableLeft="@android:drawable/ic_menu_search"
-            android:ems="10"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:hint="Artist, songs or podcasts"
             android:inputType="text"
-            android:text="Artist, songs or podcasts"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -42,14 +58,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:contentDescription="Camara"
+            android:contentDescription="Camera"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_camera" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline20"
+        android:id="@+id/guidelineH20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -57,17 +73,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutTopGenres"
-        android:layout_width="375dp"
-        android:layout_height="145dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline20">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH40"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV96"
+        app:layout_constraintStart_toEndOf="@id/guidelineV4"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH20">
 
         <TextView
             android:id="@+id/textViewTopGenres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Your top genres"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,10 +93,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutPop"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTopGenres">
 
             <TextView
                 android:id="@+id/textViewPop"
@@ -108,10 +126,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutIndie"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutPop">
 
             <TextView
                 android:id="@+id/textViewIndie"
@@ -139,7 +157,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline40"
+        android:id="@+id/guidelineH40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -147,17 +165,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutPodcastsCategories"
-        android:layout_width="375dp"
-        android:layout_height="145dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline40">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH60"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV96"
+        app:layout_constraintStart_toEndOf="@id/guidelineV4"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH40">
 
         <TextView
             android:id="@+id/textViewPodcastsCategories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Popular podcast categories"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
@@ -166,10 +185,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutNewsPolitics"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPodcastsCategories">
 
             <TextView
                 android:id="@+id/textViewNewsPolitics"
@@ -198,10 +218,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutComedy"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/layoutNewsPolitics">
 
             <TextView
                 android:id="@+id/textViewComedy"
@@ -229,7 +249,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline60"
+        android:id="@+id/guidelineH60"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -237,18 +257,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutBrowseAll"
-        android:layout_width="375dp"
-        android:layout_height="290dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline60">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH90"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV96"
+        app:layout_constraintStart_toEndOf="@id/guidelineV4"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH60">
 
         <TextView
             android:id="@+id/textViewBrowseAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Browse All"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
@@ -257,8 +277,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout2021Wrapped"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewBrowseAll">
 
@@ -288,8 +309,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutPodcast"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layout2021Wrapped">
 
@@ -319,8 +340,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMadeForYou"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout2021Wrapped">
@@ -351,8 +372,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutCharts"
             android:layout_width="160dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layoutMadeForYou">
 
@@ -381,4 +402,89 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <LinearLayout
+        android:id="@+id/layoutBottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineV96"
+        app:layout_constraintStart_toEndOf="@id/guidelineV4"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH90">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="Home Button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="Search Button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lupa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:contentDescription="Library Button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/library" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Library" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
