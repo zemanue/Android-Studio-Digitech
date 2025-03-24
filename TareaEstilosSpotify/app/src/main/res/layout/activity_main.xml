@@ -52,6 +52,7 @@
             android:drawablePadding="8dp"
             android:hint="Artist, songs or podcasts"
             android:inputType="text"
+            android:textColorHint="#898989"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -61,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:backgroundTint="#00FFFFFF"
             android:contentDescription="Camera"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -95,68 +97,50 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutPop"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
+            android:backgroundTint="@color/purple"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
-            android:background="@color/purple"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTopGenres">
 
             <TextView
                 android:id="@+id/textViewPop"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Pop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewPop"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/billieeilish" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutIndie"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginEnd="10dp"
-            android:background="@color/dark_green"
+            android:backgroundTint="@color/dark_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layoutPop">
 
             <TextView
                 android:id="@+id/textViewIndie"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Indie"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewIndie"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/indiepop" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -189,68 +173,50 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutNewsPolitics"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/blue"
+            android:backgroundTint="@color/blue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewPodcastsCategories">
 
             <TextView
                 android:id="@+id/textViewNewsPolitics"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="News and Politics"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewNewsPolitics"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/newspolitics" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutComedy"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginEnd="10dp"
-            android:background="@color/red"
+            android:backgroundTint="@color/red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layoutNewsPolitics">
 
             <TextView
                 android:id="@+id/textViewComedy"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Comedy"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewComedy"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/comedy" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -283,132 +249,96 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout2021Wrapped"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/green_olive"
+            android:backgroundTint="@color/green_olive"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewBrowseAll">
 
             <TextView
                 android:id="@+id/textView2021Wrapped"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="2021 Wrapped"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView2021Wrapped"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/spotifywrapped2024" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutPodcast"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginEnd="10dp"
-            android:background="@color/blue_navy"
+            android:backgroundTint="@color/blue_navy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layout2021Wrapped">
 
             <TextView
                 android:id="@+id/textViewPodcast"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Podcast"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewPodcast"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/podcast" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMadeForYou"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginStart="10dp"
             android:layout_marginTop="16dp"
-            android:background="@color/green"
+            android:backgroundTint="@color/green"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout2021Wrapped">
 
             <TextView
                 android:id="@+id/textViewMadeForYou"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Made for you"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewMadeForYou"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/madeforyou" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutCharts"
-            android:layout_width="160dp"
-            android:layout_height="90dp"
+            style="@style/EstiloCategoria"
             android:layout_marginEnd="10dp"
-            android:background="@color/purple_dark"
+            android:backgroundTint="@color/purple_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/layoutMadeForYou">
 
             <TextView
                 android:id="@+id/textViewCharts"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                style="@style/EstiloTituloCategoria"
                 android:text="Charts"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewCharts"
-                android:layout_width="44dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:rotation="25"
-                android:scaleType="fitCenter"
+                style="@style/EstiloImagenCategoria"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@drawable/charts" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -424,6 +354,7 @@
         android:id="@+id/layoutBottomNavBar"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:backgroundTint="#22000000"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -445,7 +376,7 @@
                 android:contentDescription="Home Button"
                 android:scaleType="fitCenter"
                 android:src="@drawable/home"
-                android:tint="@color/gray" />
+                app:tint="@color/gray" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -468,7 +399,7 @@
                 android:contentDescription="Search Button"
                 android:scaleType="fitCenter"
                 android:src="@drawable/lupa"
-                android:tint="@color/gray" />
+                app:tint="@color/gray" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -491,7 +422,7 @@
                 android:contentDescription="Library Button"
                 android:scaleType="fitCenter"
                 android:src="@drawable/library"
-                android:tint="@color/gray" />
+                app:tint="@color/gray" />
 
             <TextView
                 android:layout_width="wrap_content"

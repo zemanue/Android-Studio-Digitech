@@ -13,27 +13,37 @@
     </style>
 
     <style name="EstiloTitulo" parent="EstiloTexto">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="EstiloSearchEditText" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@color/gray</item>
+        <item name="android:background">@drawable/search_bar_rounded_corners</item>
         <item name="android:textColorHint">@color/white</item>
         <item name="android:paddingStart">12dp</item>
         <item name="android:paddingEnd">12dp</item>
     </style>
 
-    <style name="CategoryStyle">
+    <style name="EstiloCategoria">
+        <item name="android:background">@drawable/category_rounded_corners</item>
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">90dp</item>
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:background">@color/purple</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <style name="EstiloTituloCategoria">
+        <item name="android:layout_width">95dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="EstiloImagenCategoria">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:rotation">25</item>
+        <item name="android:scaleType">fitCenter</item>
     </style>
 
     <style name="BottomNavigationStyle">
